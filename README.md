@@ -12,9 +12,9 @@ The `compute` package takes Flutter's `compute` function and makes it available 
 * [Open an issue on GitHub](https://github.com/dartsidedev/compute/issues)
 * [See package on pub.dev](https://pub.dev/packages/compute)
 * [Read the docs on pub.dev](https://pub.dev/documentation/compute/latest/)
-* [Flutter `foundation`'s `compute` function](https://api.flutter.dev/flutter/foundation/compute-constant.html))
+* [Flutter `foundation`'s `compute` function](https://api.flutter.dev/flutter/foundation/compute-constant.html)
 
-**If you enjoy using this package, a thumbs-up on [pub.dev](https://pub.dev/packages/compute) would be highly appreciated! 👍💙
+**If you enjoy using this package, a thumbs-up on [pub.dev](https://pub.dev/packages/compute) would be highly appreciated! 👍💙**
 
 ## Motivation
 
