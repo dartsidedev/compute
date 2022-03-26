@@ -1,0 +1,87 @@
+name: Continuous Integration
+
+on: [push, pull_request]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image:  google/dart
+    steps:
+      - uses: actions/checkout@v2
+      - name: Ensure idiomatic Dart source code formatting
+        run: dart format --set-exit-if-changed .
+
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image:  google/dart
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get dependencies
+        run: dart pub get
+      - name: Ensure no analysis errors
+        run: dart analyze --fatal-infos --fatal-warnings .
+
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image:  google/dart
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: dart test
+
+  coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image:  google/dart
+    steps:
+      - uses: actions/checkout@v1
+      - name: Get the package's dependencies
+        run: pub get
+      - name: Collect coverage
+        run: |
+          pub global activate test_coverage
+          pub global run test_coverage
+      - uses: codecov/codecov-action@v1.0.0
+        with:
+          flags: unittests
+          file: coverage/lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [format, analyze, test-ubuntu, example-dart, coverage]
+    if: github.ref == 'refs/heads/main'
+    # Continue on error doesn't seem to work?
+    # Using || true for publishing
+    # continue-on-error: true
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dart
+        run: |
+          sudo apt-get update
+          sudo apt-get install apt-transport-https
+          sudo sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
+          sudo sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
+          sudo apt-get update
+          sudo apt-get install dart
+          export PATH="$PATH:/usr/lib/dart/bin"
+      - name: Setup credentials
+        run: |
+          mkdir -p ~/.pub-cache
+          echo ${{ secrets.PUB_CREDENTIALS_JSON }} > ~/.pub-cache/credentials.json
+      - name: Publish the package
+        run: |
+          export version=v$(grep "version: " pubspec.yaml | cut -c 10-)
+          dart pub publish --force && (git tag $version && git push origin $version && gh release create $version) || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      - name: Delete credentials
+        run: rm ~/.pub-cache/credentials.json
