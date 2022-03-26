@@ -57,7 +57,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: [format, analyze, test-ubuntu, example-dart, coverage]
+    needs: [format, analyze, test-ubuntu, coverage]
     if: github.ref == 'refs/heads/main'
     # Continue on error doesn't seem to work?
     # Using || true for publishing
