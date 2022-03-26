@@ -1,6 +1,6 @@
 name: compute
 description: Flutter's compute function made available for all non-Flutter Dart programs
-version: 0.1.0+1
+version: 1.0.0
 repository: https://github.com/dartsidedev/compute
 homepage: https://github.com/vincevargadev
 issue_tracker: https://github.com/dartsidedev/compute/issues

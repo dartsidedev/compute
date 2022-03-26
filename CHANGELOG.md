@@ -1,6 +1,6 @@
-## 0.1.0+1
+## 1.0.0
 
-- Small README improvements
+- Stable release
 
 ## 0.1.0
 
