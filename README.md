@@ -4,7 +4,7 @@
 
 The `compute` package takes Flutter's `compute` function and makes it available for all Dart programs.
 
-[![Continuous Integration](https://github.com/dartsidedev/compute/workflows/Continuous%20Integration/badge.svg?branch=main)](https://github.com/dartsidedev/compute/actions) [![codecov](https://codecov.io/gh/dartsidedev/compute/branch/main/graph/badge.svg)](https://codecov.io/gh/dartsidedev/compute) [![compute](https://img.shields.io/pub/v/compute?label=compute&logo=dart)](https://pub.dev/packages/compute 'See compute package info on pub.dev') [![Published by dartside.dev](https://img.shields.io/static/v1?label=Published%20by&message=dartside.dev&logo=dart&logoWidth=30&color=40C4FF&labelColor=1d599b&labelWidth=100)](https://pub.dev/publishers/dartside.dev/packages) [![GitHub Stars Count](https://img.shields.io/github/stars/dartsidedev/compute?logo=github)](https://github.com/dartsidedev/compute 'Star me on GitHub!')
+[![Continuous Integration](https://github.com/dartsidedev/compute/workflows/Continuous%20Integration/badge.svg?branch=main)](https://github.com/dartsidedev/compute/actions) [![compute](https://img.shields.io/pub/v/compute?label=compute&logo=dart)](https://pub.dev/packages/compute 'See compute package info on pub.dev') [![Published by dartside.dev](https://img.shields.io/static/v1?label=Published%20by&message=dartside.dev&logo=dart&logoWidth=30&color=40C4FF&labelColor=1d599b&labelWidth=100)](https://pub.dev/publishers/dartside.dev/packages) [![GitHub Stars Count](https://img.shields.io/github/stars/dartsidedev/compute?logo=github)](https://github.com/dartsidedev/compute 'Star me on GitHub!')
 
 ## Important links
 

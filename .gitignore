@@ -10,3 +10,5 @@ build/
 pubspec.lock
 
 .idea/
+
+test/.test_coverage.dart
