@@ -76,7 +76,6 @@ typedef ComputeImpl = Future<R> Function<Q, R>(
 ///
 /// {@youtube 560 315 https://www.youtube.com/watch?v=5AxWC49ZMzs}
 ///
-/// {@tool snippet}
 /// The following code uses the [compute] function to check whether a given
 /// integer is a prime number.
 ///
@@ -97,7 +96,6 @@ typedef ComputeImpl = Future<R> Function<Q, R>(
 ///   return true;
 /// }
 /// ```
-/// {@end-tool}
 ///
 /// The function used as `callback` must be one that can be sent to an isolate.
 /// {@template flutter.foundation.compute.callback}
