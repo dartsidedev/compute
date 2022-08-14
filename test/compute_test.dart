@@ -1,10 +1,19 @@
-// https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/foundation/_isolates_io.dart
-// https://github.com/flutter/flutter/commits/master/packages/flutter/lib/src/foundation/_isolates_io.dart
-// https://github.com/flutter/flutter/tree/3420b9c50ea19489dd74b024705bb010c5763d0a/packages/flutter/test/foundation
-// 3420b9c
-
-// The file is intentionally not refactored so that it is easier to keep the
-// compute package up to date with Flutter's implementation.
+/// This file corresponds to Flutter's
+/// [`test/foundation/isolates_test.dart`](https://github.com/flutter/flutter/blob/stable/packages/flutter/test/foundation/isolates_test.dart).
+///
+/// Changes are only synced with the `stable` branch.
+///
+/// Last synced commit:
+/// [3d46ab9](https://github.com/flutter/flutter/commit/3d46ab920b47a2ecb250c6f890f3559ef913cb0b)
+///
+/// The changes are currently manually synced. If you noticed that the Flutter's
+/// original `compute` function (and any of the related files) have changed
+/// on the `stable` branch and you would like to see those changes in the `compute` package
+/// please open an [issue](https://github.com/dartsidedev/compute/issues),
+/// and I'll try my best to "merge".
+///
+/// The file is intentionally not refactored so that it is easier to keep the
+/// compute package up to date with Flutter's implementation.
 
 import 'dart:io';
 import 'dart:isolate';
